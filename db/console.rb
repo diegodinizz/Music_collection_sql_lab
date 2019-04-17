@@ -3,24 +3,41 @@ require_relative("../models/artists")
 require_relative("../models/albums")
 
 
-artists = Album.delete_all()
-artists = Artist.delete_all()
+Album.delete_all()
+Artist.delete_all()
 
 artist1 = Artist.new(
   {
   'name' => 'Ben'
   })
 
-  artist1.save()
+artist1.save()
 
-  album1 = Album.new( {
+album1 = Album.new( {
     'title' => 'Californication',
     'genre' => 'Rock',
     'artist_id' => artist1.id
-    })
+  })
 
-    album1.save()
+album1.save()
+
+artist1.name = 'Red Hot Chilli Peppers'
+album1.genre = 'Punk'
 
 
-  binding.pry
-  nil
+artist1.update()
+album1.update()
+
+    # album1.delete()
+    # artist1.delete()
+
+    # p Artist.all()
+    # p Album.all()
+
+    # p Album.find(12)
+
+p album1.artist()
+
+
+  # binding.pry
+  # nil
