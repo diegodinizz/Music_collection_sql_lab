@@ -8,36 +8,37 @@ Artist.delete_all()
 
 artist1 = Artist.new(
   {
-  'name' => 'Ben'
-  })
+    'name' => 'Ben'
+    })
 
-artist1.save()
+    artist1.save()
 
-album1 = Album.new( {
-    'title' => 'Californication',
-    'genre' => 'Rock',
-    'artist_id' => artist1.id
-  })
+    album1 = Album.new( {
+      'title' => 'Californication',
+      'genre' => 'Rock',
+      'artist_id' => artist1.id
+      })
 
-album1.save()
+      album1.save()
 
-artist1.name = 'Red Hot Chilli Peppers'
-album1.genre = 'Punk'
-
-
-artist1.update()
-album1.update()
-
-    # album1.delete()
-    # artist1.delete()
-
-    # p Artist.all()
-    # p Album.all()
-
-    # p Album.find(12)
-
-p album1.artist()
+      artist1.name = 'Red Hot Chilli Peppers'
+      album1.genre = 'Punk'
 
 
-  # binding.pry
-  # nil
+      artist1.update()
+      album1.update()
+
+      album1.delete()
+      artist1.delete()
+
+      Artist.all()
+      Album.all()
+
+      Album.find(12)
+      Artist.find(10)
+      Album.find_by_id(12)
+
+      album1.artist()
+      
+      binding.pry
+      nil

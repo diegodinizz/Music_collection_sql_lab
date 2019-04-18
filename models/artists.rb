@@ -1,6 +1,6 @@
 require('pg')
 require_relative('../db/sql_runner')
-
+require('pry')
 
 class Artist
 
@@ -48,6 +48,12 @@ class Artist
     return artists.map { |artist| Artist.new(artist) }
   end
 
-  
+  def self.find(artist_id)
+    sql = "SELECT * FROM artists WHERE id = $1;"
+    values = [artist_id]
+    results = SqlRunner.run(sql, values)
+    artists = results.map { |artist| Artist.new(artist) }
+    return artists
+  end
 
 end
